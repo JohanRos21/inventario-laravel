@@ -1,59 +1,221 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Sistema de Inventario Web - Laravel + MySQL
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistema web de inventario desarrollado con Laravel, PHP y MySQL, orientado a la gestión de categorías, productos, movimientos de stock y control de productos con bajo inventario.
 
-## About Laravel
+Este proyecto fue desarrollado para practicar y profundizar el desarrollo web backend con Laravel, arquitectura MVC, autenticación, operaciones CRUD, relaciones entre tablas, validaciones y manejo de base de datos relacional.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Tecnologías utilizadas
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+ -- PHP 8.2
+ -- Laravel 12
+ -- MySQL
+ -- Laravel Breeze
+ -- Blade
+ -- Tailwind CSS
+ -- Composer
+ -- Node.js / NPM
+ -- XAMPP
+ -- phpMyAdmin
+ -- Git / GitHub
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Funcionalidades principales
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Autenticación
 
-## Laravel Sponsors
+ -- Registro de usuarios.
+ -- Inicio de sesión.
+ -- Cierre de sesión.
+ -- Dashboard protegido por autenticación.
+ 
+Categorías
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+ -- Listado de categorías.
+ -- Registro de nuevas categorías.
+ -- Edición de categorías.
+ -- Eliminación de categorías.
+ -- Estado activo/inactivo.
 
-### Premium Partners
+Productos
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+ -- Listado de productos.
+ -- Registro de productos.
+ -- Edición de productos.
+ -- Eliminación de productos.
+ -- Relación producto-categoría.
+ -- Precio, stock actual y stock mínimo.
+ -- Estado activo/inactivo.
+ -- Detección visual de productos con bajo stock.
 
-## Contributing
+Movimientos de stock
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+ -- Registro de entradas de stock.
+ -- Registro de salidas de stock.
+ -- Actualización automática del stock del producto.
+ -- Validación para evitar salidas mayores al stock disponible.
+ -- Historial de movimientos.
+ -- Asociación del movimiento con el usuario que lo registró.
 
-## Code of Conduct
+Dashboard administrativo
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+ -- Total de categorías.
+ -- Total de productos.
+ -- Productos activos. 
+ -- Productos con bajo stock
+ -- Total de movimientos de stock.
+ -- Últimos movimientos registrados.
+ --Accesos rápidos a módulos principales.
 
-## Security Vulnerabilities
+Productos con bajo stock
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+ -- Vista especial para productos cuyo stock actual es menor o igual al stock mínimo.
+ -- Acceso rápido para registrar movimientos de reposición.
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Capturas del sistema
+
+ Login
+
+(public/screenshots/login.png)
+
+ Dashboard
+
+(public/screenshots/dashboard.png)
+
+ Categorías 
+
+(public/screenshots/categories.png)
+
+ Productos
+
+(public/screenshots/products.png)
+
+ Bajo stock
+
+(public/screenshots/low-stock.png)
+
+ Movimientos de stock
+
+(public/screenshots/stock-movements.png)
+
+
+ Instalación del proyecto
+
+ 1. Clonar el repositorio
+
+```bash
+git clone URL_DEL_REPOSITORIO
+cd inventario-laravel
+```
+
+2. Instalar dependencias de PHP
+
+```bash
+composer install
+```
+
+Si Composer no está instalado globalmente en Windows, también se puede usar:
+
+```bash
+php C:\composer\composer.phar install
+```
+
+ 3. Instalar dependencias de Node (Node.js y NPM para instalación y compilación de assets frontend mediante Vite.)
+
+```bash
+npm install
+```
+
+ 4. Crear archivo de entorno
+
+Copiar el archivo `.env.example` y renombrarlo como `.env`.
+
+```bash
+copy .env.example .env
+```
+
+5. Configurar base de datos
+
+Crear una base de datos en MySQL llamada:
+
+```txt
+inventario_laravel
+```
+
+Luego configurar el archivo `.env`:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=inventario_laravel
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+ 6. Generar clave de aplicación
+
+```bash
+php artisan key:generate
+```
+
+ 7. Ejecutar migraciones y seeders
+
+```bash
+php artisan migrate --seed
+```
+
+ 8. Compilar assets
+
+```bash
+npm run build
+```
+
+9. Levantar servidor local
+
+```bash
+php artisan serve
+```
+
+Abrir en el navegador:
+
+```txt
+http://127.0.0.1:8000
+```
+
+---
+
+ Usuario demo
+
+```txt
+Email: demo@inventario.com
+Password: password
+```
+
+-
+ Conceptos aplicados
+
+* Arquitectura MVC.
+* Migraciones de base de datos.
+* Modelos Eloquent.
+* Relaciones uno a muchos.
+* Controladores resource.
+* Validaciones de formularios.
+* Autenticación con Laravel Breeze.
+* Vistas Blade.
+* Manejo de sesiones.
+* Seeders.
+* Control de inventario.
+* Lógica de negocio para entradas y salidas de stock.
+* Dashboard administrativo.
+
+---
+
+
+
+ Autor
+
+Desarrollado por Johan Rosales como proyecto de práctica en desarrollo web con Laravel.
